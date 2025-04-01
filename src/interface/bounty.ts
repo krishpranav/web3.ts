@@ -20,7 +20,7 @@ export interface Bounty {
     fundingAmount: string | number;
 
     closed: boolean;
-    cancelled: boolean;
+    canceled: boolean;
     funded: boolean;
 
     title: string;
@@ -28,4 +28,10 @@ export interface Bounty {
     branch: string;
     cid: string;
     githubUser: string;
+
+    closedDate: number;
+
+    pullRequests: PullRequest[];
+    proposals: Proposal[];
+    funding: Benefactor[];
 }
