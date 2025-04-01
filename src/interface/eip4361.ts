@@ -4,7 +4,7 @@
  * @copyright Copyright (c) 2025 Krisna Pranav
  */
 
-export interface Eip4361Message {
+export interface EIP4361Message {
     domain: string;
     address: string;
     statement: string;
@@ -15,7 +15,14 @@ export interface Eip4361Message {
     issuedAt: string;
     expirationTime: string;
     notBefore: string;
-    requestedId: string;
+    requestId: string;
     resources: string[];
     contractName: string;
+}
+
+export interface EIP4361TypedData {
+    domain: { chainId: number; name: string; version: string; verifyingContract: string };
+    primaryType: "EIP4361";
+    message: EIP4361Message;
+    types: { EIP4361: { name: string; type: string }[]; EIP712Domain: { name: string; type: string }[] };
 }
